@@ -8,7 +8,7 @@ country=str(input('Welcome to CoV-19 Data by country!\nDefault = Israel\nlist fo
 if country == '' :
     country = 'Israel'
 elif country == 'list':
-    print(list(df_confirmed['Country/Region']))
+    print(set(df_confirmed['Country/Region']))
 
 isr=df_confirmed[df_confirmed['Country/Region'] == country] # get only data about israel
 id_num = int(str(isr.index)[((str(isr.index).find('[')))+1:str(isr.index).find(']')])
